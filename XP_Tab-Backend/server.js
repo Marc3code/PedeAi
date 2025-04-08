@@ -10,6 +10,19 @@ app.get("/", (req, res) => {
   res.send("API do XP_Tab está funcionando!");
 });
 
+app.get("/pedidos/teste", (req, res) => {
+  let query = "select * from pedidos";
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Erro ao consultar os dados dos pedidos: ", err);
+      return res.status(500).json({ message: "Erro ao consultar os dados" });
+    }
+
+    res.json(results);
+  });
+});
+
 // Endpoint para criar o pedido
 app.post("/pedidos", (req, res) => {
   const { mesa, total, data, obs } = req.body;
