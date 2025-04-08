@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchPedidos(status) {
   try {
     const response = await fetch(
-      "http://localhost:3000/pedidos?status=" + encodeURIComponent(status)
+      "https://pedeai-production.up.railway.app?status=" + encodeURIComponent(status)
     );
     const data = await response.json();
     renderPedidos(data);
@@ -86,7 +86,7 @@ function renderPedidos(pedidos) {
 
       try {
         const response = await fetch(
-          `http://localhost:3000/pedidos/${pedidoId}/status`,
+          `https://pedeai-production.up.railway.app/pedidos/${pedidoId}/status`,
           {
             method: "PATCH",
             headers: {

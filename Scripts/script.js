@@ -295,7 +295,7 @@ document.getElementById("checkout").addEventListener("click", () => {
             quantidade: item.quantity,
           });
 
-          fetch(`http://localhost:3000/pedidos/${pedidoId}/produtos`, {
+          fetch(`https://pedeai-production.up.railway.app/pedidos/${pedidoId}/produtos`, {
             method: "POST",
             headers: {
               "Content-type": "application/json",
