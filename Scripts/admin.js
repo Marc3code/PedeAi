@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchPedidos(status) {
   try {
     const response = await fetch(
-      "https://pedeai-production.up.railway.app?status=" + encodeURIComponent(status)
+      "https://pedeai-production.up.railway.app/pedidos?status=" + encodeURIComponent(status)
     );
     const data = await response.json();
     renderPedidos(data);
