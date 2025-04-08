@@ -270,7 +270,7 @@ document.getElementById("checkout").addEventListener("click", () => {
     });
 
     // Envia o pedido para o backend
-    fetch("http://localhost:3000/pedidos", {
+    fetch("https://pedeai-production.up.railway.app/pedidos", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

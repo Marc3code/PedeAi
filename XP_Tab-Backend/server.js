@@ -1,10 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const db = require("./database.js"); // Importando a conexão com o banco de dados
+const db = require("./database.js"); 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("API do XP_Tab está funcionando!");
+});
 
 // Endpoint para criar o pedido
 app.post("/pedidos", (req, res) => {
@@ -50,9 +54,8 @@ app.post("/pedidos/:pedidoId/produtos", (req, res) => {
 
 // Endpoint para obter pedidos com filtragem por status
 app.get("/pedidos", (req, res) => {
-  const status = req.query.status; // Captura o status do parâmetro de consulta
+  const status = req.query.status; 
 
-  // Construção da consulta SQL com filtragem opcional
   let query = `
     SELECT pedidos.id AS pedido_id, 
            pedidos.mesa, 
