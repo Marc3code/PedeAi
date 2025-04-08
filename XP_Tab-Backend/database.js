@@ -5,7 +5,8 @@ const db = mysql.createConnection({
   host: '@caboose.proxy.rlwy.net',    
   user: 'root',          
   password: 'oQRkDWkiEgeimlgLpBNgDFLuTfPpCPQQ',          
-  database: 'railway'     
+  database: 'railway',
+  port: 27640      
 });
 
 db.connect((err) => {
