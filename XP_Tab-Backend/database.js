@@ -2,10 +2,10 @@ const mysql = require('mysql2');
 
 // Configuração da conexão com o banco de dados
 const db = mysql.createConnection({
-  host: 'localhost',    
+  host: 'caboose.proxy.rlwy.net',    
   user: 'root',          
-  password: 'Marc3code',          
-  database: 'XP_Tab'     
+  password: 'oQRkDWkiEgeimlgLpBNgDFLuTfPpCPQQ',          
+  database: 'railway'     
 });
 
 db.connect((err) => {
